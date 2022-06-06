@@ -1,0 +1,32 @@
+.Navigation {
+    background-color: #000;
+    padding: 15px;
+}
+
+.Navigation-billboards {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+}
+
+.Navigation-login {
+    padding: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+}
+
+.Navigation-button{
+    background: green;
+    font-size: 15px;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 15%;
+    cursor: pointer;
+    float: right;
+}

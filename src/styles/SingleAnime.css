@@ -1,0 +1,23 @@
+.delete-button {
+    background: red;
+    font-size: 18px;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin: 10px 20px;
+    border-radius: 15%;
+    cursor: pointer;
+    float: left;
+}
+
+.update-button {
+    background: green;
+    font-size: 18px;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    margin: 10px 20px;
+    border-radius: 15%;
+    cursor: pointer;
+    float: right;
+}

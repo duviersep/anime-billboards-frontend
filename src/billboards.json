@@ -1,0 +1,60 @@
+{
+    "response": [
+        {
+            "id": 0,
+            "animeName": "JUJUTSU KAISEN",
+            "creator": "Gege Akutami",
+            "releaseDate": "2018-03-05",
+            "finishDate": "2018-03-05",
+            "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
+            "urlImage": ".\\images\\naruto_image.jpg"
+        },
+        {
+            "id": 1,
+            "animeName": "NARUTO SHIPPUDEN",
+            "creator": "Gege Akutami",
+            "releaseDate": "2018-03-05",
+            "finishDate": "2018-03-05",
+            "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
+            "urlImage": "C:\\anime-billboards-frontend\\src\\images\\naruto_image.jpg"
+        },
+        {
+            "id": 2,
+            "animeName": "ONE PIECE",
+            "creator": "Gege Akutami",
+            "releaseDate": "2018-03-05",
+            "finishDate": "2018-03-05",
+            "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
+            "urlImage": "C:\\anime-billboards-frontend\\src\\images"
+        },
+        {
+            "id": 3,
+            "animeName": "DRAGON BALL Z",
+            "creator": "Gege Akutami",
+            "releaseDate": "2018-03-05",
+            "finishDate": null,
+            "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
+            "urlImage": "C:\\anime-billboards-frontend\\src\\images"
+        },
+        {
+            "id": 4,
+            "animeName": "HUNTER X HUNTER",
+            "creator": "Gege Akutami",
+            "releaseDate": "2018-03-05",
+            "finishDate": null,
+            "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
+            "urlImage": "C:\\anime-billboards-frontend\\src\\images"
+        },
+        {
+            "id": 5,
+            "animeName": "MY HERO ACADEMIA",
+            "creator": "Gege Akutami",
+            "releaseDate": "2018-03-05",
+            "finishDate": null,
+            "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
+            "urlImage": "C:\\anime-billboards-frontend\\src\\images"
+        }
+    ]
+}
+
+
