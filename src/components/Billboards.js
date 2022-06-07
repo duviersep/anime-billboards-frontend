@@ -10,16 +10,14 @@ const Billboards = ({ billboards }) => {
     setAnimes(billboards);
   })
 
-  return <div className='container'>
-    <div className='row mt-4'>
-      {animes.map(currentAnime => {
-        <SingleAnime
-        key={currentAnime.id}
-        anime={currentAnime}
-        />
-      })}
-    </div>
-  </div>
+  return (
+    animes.map(currentAnime => 
+      <SingleAnime
+      key={currentAnime.id}
+      anime={currentAnime}
+      />
+    )
+  )
 }
   /*
   Billboards.propTypes = {

@@ -37,22 +37,26 @@ const App = () => {
         button={navInfo.button}
       />
 
-      <Billboards 
-        className='App-billboard' 
-        billboards={billboards} 
-      />
+      <div className='container'>
+        <div className='row mt-4'>
+          <Billboards
+            className='App-billboard'
+            billboards={billboards}
+          />
+        </div>
+      </div>
 
       {/* <Routes>
         <Route path='/login' component={LoginForm} />
         <Route path='/' component={<Billboards className='App-billboard' billboards={billboards} />} exact />
       </Routes> */}
-      </div>
+      </div >
 );
 
 
 
 
-      {/* <Switch>
+{/* <Switch>
     <Route path='/' exact>
     <div className='container'>
         <div className='row mt-4'>
@@ -73,4 +77,4 @@ const App = () => {
       
 }
 
-      export default App;
+export default App;
