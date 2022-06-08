@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import '../styles/SingleAnime.css';
 import styled from 'styled-components';
 import Modal from './Modal';
+import UpdateForm from "./UpdateForm";
 //import PropTypes from 'prop-types';
 
 const SingleAnime = (currentAnime) => {
@@ -11,13 +12,15 @@ const SingleAnime = (currentAnime) => {
 
   useEffect( () => {
     setSingleAnime(currentAnime.anime);
+    setModalUpdateState(modalUpdateState);
+    console.log("Render...");
   })
 
   const { id, animeName, urlImage, creator, releaseDate, finishDate, description } = singleAnime;
 
   return (
     <div className='col-md-4' key={id}>
-      <div className='card mt-4'>
+      <div className='card mt-4 mb-4'>
         <div className='card-header'>
           <h3>{animeName}</h3>
           <img src={urlImage} alt={animeName} />
@@ -36,19 +39,17 @@ const SingleAnime = (currentAnime) => {
             className='update-button' 
             onClick={ () => setModalUpdateState(!modalUpdateState) }>
             Editar
-          </button>
-
+          </button>  
           
           <Modal
             state={modalUpdateState}
             setState={setModalUpdateState}
-            title={'CREAR CARTELERA'}
+            title={'Modificar Cartelera'}
           >
-            <Content>
-              <h1>HOLA</h1>
-            </Content>
+            
+              <UpdateForm anime={singleAnime}/>
+            
           </Modal>
-
 
         </div>
       </div>

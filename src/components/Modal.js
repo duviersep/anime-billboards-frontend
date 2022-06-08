@@ -11,7 +11,7 @@ const Modal = ({ children, state, setState, title='Anime' }) => {
                             <h3>{title}</h3>
                         </ModalHeader>
                         <CloseButton 
-                            onClick={ () => setState(false)}>
+                            onClick={ () => setState(false) }>
                         X
                         </CloseButton>
                         {children}
