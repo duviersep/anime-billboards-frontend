@@ -7,7 +7,7 @@
             "releaseDate": "2018-03-05",
             "finishDate": "2018-03-05",
             "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
-            "urlImage": ".\\images\\naruto_image.jpg"
+            "urlImage": "/static/media/naruto_image.905d7c3691406eef285c.jpg"
         },
         {
             "id": 1,

@@ -3,6 +3,7 @@ import '../styles/SingleAnime.css';
 import styled from 'styled-components';
 import Modal from './Modal';
 import UpdateForm from "./UpdateForm";
+import img from "../images/naruto_image.jpg"
 //import PropTypes from 'prop-types';
 
 const SingleAnime = (currentAnime) => {
@@ -23,7 +24,7 @@ const SingleAnime = (currentAnime) => {
       <div className='card mt-4 mb-4'>
         <div className='card-header'>
           <h3>{animeName}</h3>
-          <img src={urlImage} alt={animeName} />
+          <img src={img} alt={animeName} />
           <br />
           <span className="badge badge-pill badge-danger ml-2">
             {creator}
