@@ -22,12 +22,6 @@ const App = () => {
     setBillboards(dataJSON.response);
   })
 
-  // useEffect(() => {
-  //   const response = getBillboards();
-  //   setBillboards(response);
-  //   console.log(billboards);
-  // }, []);
-
   return (
     <div className='App'>
       <Navigation
@@ -45,36 +39,8 @@ const App = () => {
           />
         </div>
       </div>
-
-      {/* <Routes>
-        <Route path='/login' component={LoginForm} />
-        <Route path='/' component={<Billboards className='App-billboard' billboards={billboards} />} exact />
-      </Routes> */}
-      </div >
-);
-
-
-
-
-{/* <Switch>
-    <Route path='/' exact>
-    <div className='container'>
-        <div className='row mt-4'>
-          <Billboards
-            className='App-billboard'
-            billboards={billboards}
-          />
-        </div>
-        </div>
-
-</div>
-    </Route>
-
-
-      <Route path='/login'component={LoginForm}/>
-    </Switch> */}
-
-      
+    </div >
+  );
 }
 
 export default App;

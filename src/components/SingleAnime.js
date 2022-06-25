@@ -14,7 +14,6 @@ const SingleAnime = (currentAnime) => {
   useEffect( () => {
     setSingleAnime(currentAnime.anime);
     setModalUpdateState(modalUpdateState);
-    console.log("Render...");
   })
 
   const { id, animeName, urlImage, creator, releaseDate, finishDate, description } = singleAnime;
@@ -24,7 +23,7 @@ const SingleAnime = (currentAnime) => {
       <div className='card mt-4 mb-4'>
         <div className='card-header'>
           <h3>{animeName}</h3>
-          <img src={img} alt={animeName} />
+          <img src={img} alt={animeName} width='100' />
           <br />
           <span className="badge badge-pill badge-danger ml-2">
             {creator}
@@ -47,9 +46,7 @@ const SingleAnime = (currentAnime) => {
             setState={setModalUpdateState}
             title={'Modificar Cartelera'}
           >
-            
               <UpdateForm anime={singleAnime}/>
-            
           </Modal>
 
         </div>
@@ -75,7 +72,7 @@ SingleBillboard.propTypes = {
 }
 */
 export default SingleAnime;
-
+/*
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -98,3 +95,4 @@ const Content = styled.div`
     border-radius: 3px;
   }
 `;
+*/
