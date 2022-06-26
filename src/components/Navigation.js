@@ -1,7 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Modal from './Modal';
+import UpdateForm from "./UpdateForm";
 //import PropTypes from 'prop-types';
 
-const Navigation = ({ title, nBillboards, login, button }) => {
+const Navigation = ({ title, nBillboards, button }) => {
+
+    const [modalUpdateState, setModalUpdateState] = useState(false);
+    const [singleAnime, setSingleAnime] = useState([]);
+
+    useEffect( () => {
+        setSingleAnime({"id": null,
+        "animeName": null,
+        "creator": null,
+        "releaseDate": null,
+        "finishDate": null,
+        "description": null,
+        "urlImage": null});
+        setModalUpdateState(modalUpdateState);
+      })
 
     return (
         <nav className='Navigation'>
@@ -11,12 +27,17 @@ const Navigation = ({ title, nBillboards, login, button }) => {
                     {nBillboards}
                 </span>
             </a>
-            <a href='http://localhost:3000/login' className='Navigation-login' >
-                {login}
-            </a>
-            <button className='Navigation-button'>
+            <button className='Navigation-button'
+            onClick={ () => setModalUpdateState(!modalUpdateState) }>
                 {button}
             </button>
+            <Modal
+            state={modalUpdateState}
+            setState={setModalUpdateState}
+            title={'Crear Cartelera'}
+          >
+              <UpdateForm anime={singleAnime}/>
+          </Modal>
         </nav>
     );
 }

@@ -6,7 +6,7 @@ import './styles/Navigation.css';
 import Navigation from './components/Navigation.js';
 import Billboards from './components/Billboards.js';
 import LoginForm from './components/LoginForm';
-import dataJSON from './billboards.json';
+import dataJSON from './billboards';
 //import getBillboards from './helpers/getBillboards';
 
 const App = () => {
@@ -27,7 +27,6 @@ const App = () => {
       <Navigation
         title={navInfo.title}
         nBillboards={billboards.length}
-        login={navInfo.login}
         button={navInfo.button}
       />
 

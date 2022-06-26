@@ -3,7 +3,7 @@ import '../styles/SingleAnime.css';
 import styled from 'styled-components';
 import Modal from './Modal';
 import UpdateForm from "./UpdateForm";
-import img from "../images/naruto_image.jpg"
+//import img from "../images/naruto_image.jpg"
 //import PropTypes from 'prop-types';
 
 const SingleAnime = (currentAnime) => {
@@ -14,6 +14,7 @@ const SingleAnime = (currentAnime) => {
   useEffect( () => {
     setSingleAnime(currentAnime.anime);
     setModalUpdateState(modalUpdateState);
+    console.log("Render...");
   })
 
   const { id, animeName, urlImage, creator, releaseDate, finishDate, description } = singleAnime;
@@ -23,7 +24,7 @@ const SingleAnime = (currentAnime) => {
       <div className='card mt-4 mb-4'>
         <div className='card-header'>
           <h3>{animeName}</h3>
-          <img src={img} alt={animeName} width='100' />
+          <img src={urlImage} alt={animeName} width='100%'/>
           <br />
           <span className="badge badge-pill badge-danger ml-2">
             {creator}
@@ -36,10 +37,10 @@ const SingleAnime = (currentAnime) => {
             Eliminar
           </button>
           <button 
-            className='update-button' 
+            className='update-button'
             onClick={ () => setModalUpdateState(!modalUpdateState) }>
             Editar
-          </button>  
+          </button>
           
           <Modal
             state={modalUpdateState}
@@ -48,7 +49,6 @@ const SingleAnime = (currentAnime) => {
           >
               <UpdateForm anime={singleAnime}/>
           </Modal>
-
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@ SingleBillboard.propTypes = {
 }
 */
 export default SingleAnime;
-/*
+
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -95,4 +95,3 @@ const Content = styled.div`
     border-radius: 3px;
   }
 `;
-*/

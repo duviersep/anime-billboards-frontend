@@ -7,7 +7,7 @@
             "releaseDate": "2018-03-05",
             "finishDate": "2018-03-05",
             "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
-            "urlImage": "/static/media/naruto_image.905d7c3691406eef285c.jpg"
+            "urlImage": "https://m.media-amazon.com/images/I/914-pZTMQRL._AC_SY679_.jpg"
         },
         {
             "id": 1,
@@ -16,7 +16,7 @@
             "releaseDate": "2018-03-05",
             "finishDate": "2018-03-05",
             "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
-            "urlImage": "C:\\anime-billboards-frontend\\src\\images\\naruto_image.jpg"
+            "urlImage": "https://m.media-amazon.com/images/I/71U6KzJ2w-L._AC_SL1000_.jpg"
         },
         {
             "id": 2,
@@ -25,7 +25,7 @@
             "releaseDate": "2018-03-05",
             "finishDate": "2018-03-05",
             "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
-            "urlImage": "C:\\anime-billboards-frontend\\src\\images"
+            "urlImage": "https://m.media-amazon.com/images/I/61Jh0M4n76L._AC_.jpg"
         },
         {
             "id": 3,
@@ -34,7 +34,7 @@
             "releaseDate": "2018-03-05",
             "finishDate": null,
             "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
-            "urlImage": "C:\\anime-billboards-frontend\\src\\images"
+            "urlImage": "https://i.pinimg.com/originals/63/d5/41/63d541ead52b7ba6da97dc024a63be6f.png"
         },
         {
             "id": 4,
@@ -43,7 +43,7 @@
             "releaseDate": "2018-03-05",
             "finishDate": null,
             "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
-            "urlImage": "C:\\anime-billboards-frontend\\src\\images"
+            "urlImage": "https://ae01.alicdn.com/kf/HTB1pknnXXuWBuNjSspnq6x1NVXah/P-ster-en-lienzo-de-la-ltima-misi-n-Hunter-x-Hunter-para-decoraci-n-de.jpg_Q90.jpg_.webp"
         },
         {
             "id": 5,
@@ -52,7 +52,7 @@
             "releaseDate": "2018-03-05",
             "finishDate": null,
             "description": "es una serie de manga japonés escrita e ilustrada por Gege Akutami",
-            "urlImage": "C:\\anime-billboards-frontend\\src\\images"
+            "urlImage": "https://m.media-amazon.com/images/I/819hgiNakBL._AC_SY741_.jpg"
         }
     ]
 }

@@ -68,6 +68,7 @@ const UpdateForm = ( singleAnime ) => {
 const handleInput = (e) => {
     const { value, name } = e.target;
     console.log(e.target.value, e.target.name);
+    //setAnime={[name] : value};
     //setAnime({[name] : value});
 }
 
