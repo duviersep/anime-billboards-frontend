@@ -8,11 +8,11 @@ import UpdateForm from "./UpdateForm";
 
 const SingleAnime = (currentAnime) => {
 
-  const [singleAnime, setSingleAnime] = useState([]);
+  const [singleAnime, setSingleAnime] = useState(currentAnime.anime);
   const [modalUpdateState, setModalUpdateState] = useState(false);
 
   useEffect( () => {
-    setSingleAnime(currentAnime.anime);
+    //setSingleAnime(currentAnime.anime);
     setModalUpdateState(modalUpdateState);
     console.log("Render...");
   })
@@ -33,7 +33,11 @@ const SingleAnime = (currentAnime) => {
         <div className='card-body'>
           <p>{releaseDate} - {finalizedAnime(finishDate)}</p>
           <p>{description}</p>
-          <button className='delete-button'>
+        </div>
+        <div className='card-footer'>
+          <button 
+            className='delete-button'
+            onClick={handleRemoveSingleAnime(singleAnime)}>
             Eliminar
           </button>
           <button 
@@ -42,12 +46,16 @@ const SingleAnime = (currentAnime) => {
             Editar
           </button>
           
+          
           <Modal
             state={modalUpdateState}
             setState={setModalUpdateState}
             title={'Modificar Cartelera'}
           >
-              <UpdateForm anime={singleAnime}/>
+              <UpdateForm 
+                stateAnime={singleAnime}
+                setStateAnime={setSingleAnime}
+                />
           </Modal>
         </div>
       </div>
@@ -57,6 +65,10 @@ const SingleAnime = (currentAnime) => {
 
 const finalizedAnime= (finishDate) => {
   return finishDate != null ? finishDate : "En emisión";
+}
+
+const handleRemoveSingleAnime = (singleAnime) => {
+  console.log(singleAnime.id);
 }
 
 /*

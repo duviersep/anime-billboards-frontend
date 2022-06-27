@@ -4,7 +4,7 @@ import UpdateForm from "./UpdateForm";
 //import PropTypes from 'prop-types';
 
 const Navigation = ({ title, nBillboards, button }) => {
-
+/*
     const [modalUpdateState, setModalUpdateState] = useState(false);
     const [singleAnime, setSingleAnime] = useState([]);
 
@@ -18,6 +18,7 @@ const Navigation = ({ title, nBillboards, button }) => {
         "urlImage": null});
         setModalUpdateState(modalUpdateState);
       })
+*/
 
     return (
         <nav className='Navigation'>
@@ -27,17 +28,10 @@ const Navigation = ({ title, nBillboards, button }) => {
                     {nBillboards}
                 </span>
             </a>
-            <button className='Navigation-button'
-            onClick={ () => setModalUpdateState(!modalUpdateState) }>
+            <button className='Navigation-button'>
                 {button}
             </button>
-            <Modal
-            state={modalUpdateState}
-            setState={setModalUpdateState}
-            title={'Crear Cartelera'}
-          >
-              <UpdateForm anime={singleAnime}/>
-          </Modal>
+            
         </nav>
     );
 }

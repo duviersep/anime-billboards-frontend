@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from "react";
 import '../styles/UpdateForm.css';
 
-const UpdateForm = ( singleAnime ) => {
+const UpdateForm = ( {stateAnime, setStateAnime} ) => {
 
- const [anime, setAnime]= useState({});
-
+ //const [anime, setAnime]= useState(singleAnime.anime);
+/*
  useEffect( () => {
     setAnime(singleAnime.anime);
   })
 
- const { animeName, urlImage, creator, releaseDate, finishDate, description } = anime;
+useEffect( () => {
+    setStateAnime = singleAnime;
+})
+*/
+ const { animeName, creator, releaseDate, finishDate, description } = stateAnime;
 
     return (
         <form onSubmit={handleSubmit} >
             <label htmlFor='title' className='form-label'>Título</label>
             <input
                 type='text'
-                id='title'
-                name='title'
-                onChange={handleInput}
+                id='animeName'
+                name='animeName'
+                onChange={handleInput(setStateAnime,stateAnime)}
                 defaultValue={animeName}
                 className='form-control'
             />
@@ -65,11 +69,18 @@ const UpdateForm = ( singleAnime ) => {
     );
 }
 
-const handleInput = (e) => {
-    const { value, name } = e.target;
-    console.log(e.target.value, e.target.name);
-    //setAnime={[name] : value};
-    //setAnime({[name] : value});
+const handleInput = (e, setStateAnime, stateAnime) => {
+    //const { value, name } = e.target;
+    //console.log(e.target.value, e.target.name);
+    //console.log([name], value);
+    console.log(e.target);
+    //setAnime={[name] : value}; Este funciona?
+    //setStateAnime={[name] : value};
+    //setAnime={'animeName': 'TORIYAMA'}
+    console.log(stateAnime);
+    //setStateAnime={[name] : value};
+    //useState.setAnime={[name] : value};
+    //onChange={() => {setStateAnime={'animeName' : 'narutico'}; console.log(stateAnime)}}
 }
 
 const handleSubmit = (e) => {
