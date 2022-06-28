@@ -1,45 +1,45 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 import './styles/Navigation.css';
 import Navigation from './components/Navigation.js';
 import Billboards from './components/Billboards.js';
-import LoginForm from './components/LoginForm';
 import dataJSON from './billboards';
 //import getBillboards from './helpers/getBillboards';
 
-const App = () => {
+class App extends Component {
 
-  const [billboards, setBillboards] = useState([]);
-  const [navInfo, setNavInfo] = useState({
-    title: 'Carteleras Anime',
-    login: 'Login',
-    button: 'Nuevo'
-  });
+  constructor(props) {
+    super(props);
+    this.state = {
+      billboards : dataJSON.response,
+      navInfo : {
+                 title: 'Carteleras Anime',
+                 login: 'Login',
+                 button: 'Nuevo'
+                }
+    };
+  }
 
-  useEffect(() => {
-    setBillboards(dataJSON.response);
-  })
-
-  return (
-    <div className='App'>
-      <Navigation
-        title={navInfo.title}
-        nBillboards={billboards.length}
-        button={navInfo.button}
-      />
-
-      <div className='container'>
-        <div className='row mt-4'>
-          <Billboards
-            className='App-billboard'
-            billboards={billboards}
-          />
+  render(){
+    return (
+      <div className='App'>
+        <Navigation
+          title={this.state.navInfo.title}
+          nBillboards={this.state.billboards.length}
+          button={this.state.navInfo.button}
+        />
+  
+        <div className='container'>
+          <div className='row mt-4'>
+            <Billboards
+              className='App-billboard'
+              billboards={this.state.billboards}
+            />
+          </div>
         </div>
-      </div>
-    </div >
-  );
+      </div >
+    );
+  }
 }
 
 export default App;

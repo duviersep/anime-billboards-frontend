@@ -1,27 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import SingleAnime from './SingleAnime';
 //import PropTypes from 'prop-types';
 
-const Billboards = ({ billboards }) => {
+class Billboards extends Component {
 
-  const [animes, setAnimes] = useState([]);
-
-  useEffect(() => {
-    setAnimes(billboards);
-  })
-
-  return (
-    animes.map(currentAnime => 
-      <SingleAnime
-      key={currentAnime.id}
-      anime={currentAnime}
-      />
-    )
-  )
-}
-  /*
-  Billboards.propTypes = {
-    billboards: PropTypes.array.isRequired
+  constructor(props){
+    super(props);
+    this.state={
+      billboards : this.props.billboards
+    }
   }
-  */
-  export default Billboards;
+  render(){
+    return (
+      this.state.billboards.map(currentAnime => 
+        <SingleAnime
+        key={currentAnime.id}
+        anime={currentAnime}/>
+        )
+    )
+  }
+}
+
+export default Billboards;

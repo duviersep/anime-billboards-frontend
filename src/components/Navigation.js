@@ -1,44 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import Modal from './Modal';
 import UpdateForm from "./UpdateForm";
 //import PropTypes from 'prop-types';
 
-const Navigation = ({ title, nBillboards, button }) => {
-/*
-    const [modalUpdateState, setModalUpdateState] = useState(false);
-    const [singleAnime, setSingleAnime] = useState([]);
-
-    useEffect( () => {
-        setSingleAnime({"id": null,
-        "animeName": null,
-        "creator": null,
-        "releaseDate": null,
-        "finishDate": null,
-        "description": null,
-        "urlImage": null});
-        setModalUpdateState(modalUpdateState);
-      })
-*/
-
-    return (
-        <nav className='Navigation'>
-            <a href='http://localhost:3000/' className='Navigation-billboards'>
-                {title}
-                <span className="badge badge-pill badge-info ml-2">
-                    {nBillboards}
-                </span>
-            </a>
-            <button className='Navigation-button'>
-                {button}
-            </button>
-            
-        </nav>
-    );
+class Navigation extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: this.props.title,
+            nBillboards: this.props.nBillboards,
+            button: this.props.button
+        }
+    }
+    render(){
+        return (
+            <nav className='Navigation'>
+                <a href='http://localhost:3000/' className='Navigation-billboards'>
+                    {this.state.title}
+                    <span className="badge badge-pill badge-info ml-2">
+                        {this.state.nBillboards}
+                    </span>
+                </a>
+                <button className='Navigation-button'>
+                    {this.state.button}
+                </button>
+                
+            </nav>
+        );
+    }
 }
-/*
-Navigation.propTypes = {
-    title: PropTypes.string.isRequired,
-    nBillboards: PropTypes.number.isRequired
-  }
-*/
+
 export default Navigation;

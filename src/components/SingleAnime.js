@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import '../styles/SingleAnime.css';
 import styled from 'styled-components';
 import Modal from './Modal';
 import UpdateForm from "./UpdateForm";
-//import img from "../images/naruto_image.jpg"
-//import PropTypes from 'prop-types';
 
-const SingleAnime = (currentAnime) => {
+class SingleAnime extends Component {
 
-  const [singleAnime, setSingleAnime] = useState(currentAnime.anime);
-  const [modalUpdateState, setModalUpdateState] = useState(false);
+  constructor(props){
+    super(props);
+    this.state={
+      singleAnime : this.props.anime,
+    }
 
-  useEffect( () => {
-    //setSingleAnime(currentAnime.anime);
-    setModalUpdateState(modalUpdateState);
-    console.log("Render...");
-  })
+    this.finalizedAnime = this.finalizedAnime.bind(this);
+    this.handleRemoveSingleAnime = this.handleRemoveSingleAnime.bind(this);
+  }
 
-  const { id, animeName, urlImage, creator, releaseDate, finishDate, description } = singleAnime;
+  render(){
+    const { id, animeName, urlImage, creator, releaseDate, finishDate, description } = this.state.singleAnime;
 
   return (
     <div className='col-md-4' key={id}>
@@ -31,58 +31,56 @@ const SingleAnime = (currentAnime) => {
           </span>
         </div>
         <div className='card-body'>
-          <p>{releaseDate} - {finalizedAnime(finishDate)}</p>
+          <p>{releaseDate} - {this.finalizedAnime(finishDate)}</p>
           <p>{description}</p>
         </div>
         <div className='card-footer'>
           <button 
             className='delete-button'
-            onClick={handleRemoveSingleAnime(singleAnime)}>
+            onClick={this.handleRemoveSingleAnime}>
             Eliminar
           </button>
           <button 
             className='update-button'
-            onClick={ () => setModalUpdateState(!modalUpdateState) }>
+            onClick={ () => this.props.modalUpdateState(!this.props.modalUpdateState) }>
             Editar
           </button>
           
-          
           <Modal
-            state={modalUpdateState}
-            setState={setModalUpdateState}
+            state={this.props.modalUpdateState}
+            setState={this.props.setModalUpdateState}
             title={'Modificar Cartelera'}
           >
               <UpdateForm 
-                stateAnime={singleAnime}
-                setStateAnime={setSingleAnime}
+                stateAnime={this.state.singleAnime}
+                setStateAnime={this.state.setSingleAnime}
                 />
           </Modal>
         </div>
       </div>
     </div>
   )
-}
+  }
 
-const finalizedAnime= (finishDate) => {
-  return finishDate != null ? finishDate : "En emisión";
+  finalizedAnime(finishDate) {
+    return finishDate != null ? finishDate : "En emisión";
+  }
+  
+  handleRemoveSingleAnime(singleAnime) {
+    console.log(singleAnime.id);
+  }
 }
-
-const handleRemoveSingleAnime = (singleAnime) => {
-  console.log(singleAnime.id);
-}
-
 /*
-SingleBillboard.propTypes = {
-    //billboard: PropTypes.object.isRequired
-    id: PropTypes.number.isRequired,
-    animeName: PropTypes.string.isRequired,
-    urlImage: PropTypes.string.isRequired,
-    creator: PropTypes.string.isRequired,
-    releaseDate: PropTypes.string.isRequired,
-    finishDate: PropTypes.string,
-    description: PropTypes.string.isRequired
-}
+  const [singleAnime, setSingleAnime] = useState(currentAnime.anime);
+  const [modalUpdateState, setModalUpdateState] = useState(false);
+
+  useEffect( () => {
+    //setSingleAnime(currentAnime.anime);
+    setModalUpdateState(modalUpdateState);
+    console.log("Render...");
+  })
 */
+
 export default SingleAnime;
 
 const Content = styled.div`
