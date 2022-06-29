@@ -16,6 +16,11 @@ const SingleAnime = (currentAnime) => {
 
   const { id, animeName, urlImage, creator, releaseDate, finishDate, description } = singleAnime;
 
+  const handleSubmit = (dataState) => {
+    setSingleAnime(dataState);
+    setModalUpdateState(false)
+}
+
   return (
     <div className='col-md-4' key={id}>
       <div className='card mt-4 mb-4'>
@@ -51,7 +56,7 @@ const SingleAnime = (currentAnime) => {
           >
               <UpdateForm 
                 stateAnime={singleAnime}
-                setStateAnime={setSingleAnime}
+                handleSubmit={handleSubmit}
                 />
           </Modal>
         </div>

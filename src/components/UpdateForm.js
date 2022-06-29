@@ -1,14 +1,34 @@
 import React, { useState, useEffect } from "react";
 import '../styles/UpdateForm.css';
 
-const UpdateForm = ( {stateAnime, setStateAnime} ) => {
+const UpdateForm = ( {stateAnime, handleSubmit} ) => {
 
  const [dataState, setDataState] = useState(stateAnime);
 
  const { animeName, creator, releaseDate, finishDate, description } = dataState;
 
+ const handleInput = (e) => {
+    const { value, name } = e.target;
+
+    console.log({ value, name })
+    //setDataState([name] : value);
+
+    setDataState({...dataState, [name]: value})
+
+
+    //setAnime={[name] : value}; Este funciona?
+    //setStateAnime={[name] : value};
+    //setAnime={'animeName': 'TORIYAMA'}
+    //setStateAnime={[name] : value};
+    //useState.setAnime={[name] : value};
+    //onChange={() => {setStateAnime={'animeName' : 'narutico'}; console.log(stateAnime)}}
+}
+
+
+
+
     return (
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={() => handleSubmit(dataState)} >
             <label htmlFor='title' className='form-label'>Título</label>
             <input
                 type='text'
@@ -61,22 +81,6 @@ const UpdateForm = ( {stateAnime, setStateAnime} ) => {
     );
 }
 
-const handleInput = (e) => {
-    const { value, name } = e.target;
-    //setDataState([name] : value);
 
-    console.log(e.target);
-    //setAnime={[name] : value}; Este funciona?
-    //setStateAnime={[name] : value};
-    //setAnime={'animeName': 'TORIYAMA'}
-    //setStateAnime={[name] : value};
-    //useState.setAnime={[name] : value};
-    //onChange={() => {setStateAnime={'animeName' : 'narutico'}; console.log(stateAnime)}}
-}
-
-const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('sending data...')
-}
 
 export default UpdateForm;
