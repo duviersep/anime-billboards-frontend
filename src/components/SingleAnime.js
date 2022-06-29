@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import '../styles/SingleAnime.css';
-import styled from 'styled-components';
 import Modal from './Modal';
 import UpdateForm from "./UpdateForm";
 //import img from "../images/naruto_image.jpg"
@@ -12,9 +11,7 @@ const SingleAnime = (currentAnime) => {
   const [modalUpdateState, setModalUpdateState] = useState(false);
 
   useEffect( () => {
-    //setSingleAnime(currentAnime.anime);
     setModalUpdateState(modalUpdateState);
-    console.log("Render...");
   })
 
   const { id, animeName, urlImage, creator, releaseDate, finishDate, description } = singleAnime;
@@ -71,39 +68,4 @@ const handleRemoveSingleAnime = (singleAnime) => {
   console.log(singleAnime.id);
 }
 
-/*
-SingleBillboard.propTypes = {
-    //billboard: PropTypes.object.isRequired
-    id: PropTypes.number.isRequired,
-    animeName: PropTypes.string.isRequired,
-    urlImage: PropTypes.string.isRequired,
-    creator: PropTypes.string.isRequired,
-    releaseDate: PropTypes.string.isRequired,
-    finishDate: PropTypes.string,
-    description: PropTypes.string.isRequired
-}
-*/
 export default SingleAnime;
-
-const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  h1 {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-
-  img {
-    width: 100%;
-    vertical-align: top;
-    border-radius: 3px;
-  }
-`;

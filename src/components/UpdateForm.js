@@ -3,17 +3,9 @@ import '../styles/UpdateForm.css';
 
 const UpdateForm = ( {stateAnime, setStateAnime} ) => {
 
- //const [anime, setAnime]= useState(singleAnime.anime);
-/*
- useEffect( () => {
-    setAnime(singleAnime.anime);
-  })
+ const [dataState, setDataState] = useState(stateAnime);
 
-useEffect( () => {
-    setStateAnime = singleAnime;
-})
-*/
- const { animeName, creator, releaseDate, finishDate, description } = stateAnime;
+ const { animeName, creator, releaseDate, finishDate, description } = dataState;
 
     return (
         <form onSubmit={handleSubmit} >
@@ -22,7 +14,7 @@ useEffect( () => {
                 type='text'
                 id='animeName'
                 name='animeName'
-                onChange={handleInput(setStateAnime,stateAnime)}
+                onChange={handleInput}
                 defaultValue={animeName}
                 className='form-control'
             />
@@ -69,15 +61,14 @@ useEffect( () => {
     );
 }
 
-const handleInput = (e, setStateAnime, stateAnime) => {
-    //const { value, name } = e.target;
-    //console.log(e.target.value, e.target.name);
-    //console.log([name], value);
+const handleInput = (e) => {
+    const { value, name } = e.target;
+    //setDataState([name] : value);
+
     console.log(e.target);
     //setAnime={[name] : value}; Este funciona?
     //setStateAnime={[name] : value};
     //setAnime={'animeName': 'TORIYAMA'}
-    console.log(stateAnime);
     //setStateAnime={[name] : value};
     //useState.setAnime={[name] : value};
     //onChange={() => {setStateAnime={'animeName' : 'narutico'}; console.log(stateAnime)}}
