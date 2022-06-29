@@ -11,10 +11,6 @@ const Navigation = ({ title, nBillboards, button }) => {
                     {nBillboards}
                 </span>
             </a>
-            <button className='Navigation-button'>
-                {button}
-            </button>
-            
         </nav>
     );
 }
